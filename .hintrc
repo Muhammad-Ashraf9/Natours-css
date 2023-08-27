@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "shape-outside: circle(50% at 50% 50%)"
+        ]
+      }
+    ]
+  }
+}
