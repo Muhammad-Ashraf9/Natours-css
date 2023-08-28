@@ -4,7 +4,9 @@
   padding: 2rem;
   transition: all 0.2s;
   border-radius: $default-border-radius;
-
+  @include respond(tab-port) {
+    padding: 1.5rem;
+  }
   &:hover {
     transform: translateY(-2rem) scale(1.1);
   }
@@ -22,5 +24,8 @@
   }
   &__text {
     font-size: 1.3rem;
+    @include respond(tab-port) {
+      font-size: 1.6rem;
+    }
   }
 }

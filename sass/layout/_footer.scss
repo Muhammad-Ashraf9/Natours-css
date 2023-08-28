@@ -3,8 +3,8 @@
   color: $color-gray-light-1;
   background-color: $color-gray-dark-2;
   font-size: 1.3rem;
-  @include respond(phone) {
-    background-color: red;
+  @include respond(tab-port) {
+    font-size: 1.5rem;
   }
   &__logo-container {
     text-align: center;
@@ -16,6 +16,10 @@
     padding: 3rem 0;
     border-top: 1px solid $color-gray-light-1;
     display: inline-block;
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
   &__list {
     list-style: none;
@@ -49,5 +53,10 @@
     border-top: 1px solid $color-gray-light-1;
     width: 80%;
     float: right;
+    @include respond(tab-port) {
+      float: none;
+      width: 100%;
+      text-align: center;
+    }
   }
 }

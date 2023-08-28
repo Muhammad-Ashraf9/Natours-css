@@ -1,11 +1,14 @@
 {
   "name": "natours",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Natours",
+  "default": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "sass --watch sass:css "
   },
   "author": "Ash",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
 }

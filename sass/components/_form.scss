@@ -47,6 +47,11 @@
     position: relative;
     display: inline-block;
     width: 45%;
+    @include respond(tab-port) {
+      display: block;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
   }
   &__radio-input {
     display: none;
