@@ -274,6 +274,7 @@ body {
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(0.9);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 .composition__photo {
   position: absolute;
@@ -281,6 +282,7 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
   z-index: 1;
   outline-offset: 1.5rem;
+  border-radius: 1rem;
   transition: all 0.2s;
 }
 @media screen and (max-width: 48em) {
@@ -727,6 +729,70 @@ body {
   padding: 2rem 0;
 }
 
+.popup {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+.popup:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup:target .popup__content {
+  transform: scale(1) translate(-50%, -50%);
+}
+.popup__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  background-color: #fff;
+  display: table;
+  border-radius: 3px;
+  overflow: hidden;
+  transform: translate(-50%, -50%) scale(0.3);
+  transition: all 0.5s 0.2s ease-in-out;
+}
+.popup__left {
+  width: 33%;
+  display: table-cell;
+}
+.popup__right {
+  width: 60%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3rem 6rem;
+}
+.popup__img {
+  width: 100%;
+  display: block;
+}
+.popup__text {
+  font-size: 1.5rem;
+  column-count: 2;
+  column-gap: 2rem;
+  hyphens: auto;
+}
+.popup__close:link, .popup__close:active, .popup__close:visited {
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+  font-size: 4rem;
+  text-decoration: none;
+  color: inherit;
+}
+.popup__close:hover {
+  color: #28b485;
+}
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
@@ -916,13 +982,13 @@ body {
   transform: skewY(7deg);
 }
 
-.section-cards {
+.section-tours {
   padding: 20rem 0;
   background-color: #f7f7f7;
   margin-top: -10rem;
 }
 @media screen and (max-width: 48em) {
-  .section-cards {
+  .section-tours {
     padding: 15rem 0;
   }
 }
